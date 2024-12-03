@@ -9,5 +9,177 @@
 <body>
 	<div class="back-link-box"><a draggable="false" href="index.html" class="back-link">НА ГЛАВНУЮ</a></div>
 	<h1>РЕЦЕПТ БЛИНОВ</h1>
+	<div class="content">
+		<div id="calc-ingr-box">
+			<h2 id="ingr_calc_title">Количество порций:</h2>
+			<button id="ingr_minus" onclick="ingrMinus()">-</button>
+			<h2 id="ingr_sum">2</h2>
+			<button id="ingr_plus" onclick="ingrPlus()">+</button>
+		</div>
+		<h2>Ингридиенты:</h2>
+		<ul class="ingridients">
+			<li class="ing__item">Яйца: <span id="eggs" class="sum_of_item">2 шт</span></li>
+			<li class="ing__item">Сахар: <span id="sugar" class="sum_of_item">3 ст.л.</span></li>
+			<li class="ing__item">Соль: <span id="salt" class="sum_of_item">1 щеп</span></li>
+			<li class="ing__item">Кипяток: <span id="water" class="sum_of_item">200 мл</span></li>
+			<li class="ing__item">Молоко: <span id="milk" class="sum_of_item">200 мл</span></li>
+			<li class="ing__item">Разрыхлитель: <span id="razryh" class="sum_of_item">1 ч.л.</span></li>
+			<li class="ing__item">Мука: <span id="floor" class="sum_of_item">250 г</span></li>
+			<li class="ing__item">Подсолнечное масло: <span id="oil" class="sum_of_item">3 ст.л.</span></li>
+		</ul>
+
+		<div class="step">
+			<div></div>
+			<h2>ШАГ 1</h2>
+			<div></div>
+		</div>
+
+		<ul class="step-cont">
+			<li>Вбить яйца в миску</li>
+			<li>Добавить соль и сахар</li>
+			<li>Взбить до получения однородной массы и образования пены</li>
+		</ul>
+		
+		<div class="step">
+			<div></div>
+			<h2>ШАГ 2</h2>
+			<div></div>
+		</div>
+
+		<ul class="step-cont">
+			<li>Влить кипяток. Перемешать</li>
+			<li>Влить молоко. Перемешать</li>
+			<li>Добавить разрыхлитель. Перемешать</li>
+		</ul>
+
+		<div class="step">
+			<div></div>
+			<h2>ШАГ 3</h2>
+			<div></div>
+		</div>
+
+		<ul class="step-cont">
+			<li>В основу при постоянном помешивании порциями всыпаем просеянную муку</li>
+			<li>Добавляем растительное масло</li>
+		</ul>
+
+		<div class="step">
+			<div></div>
+			<h2>ГОТОВО!</h2>
+			<div></div>
+		</div>
+
+	</div>
+
+	<script>
+		let ingr_sum = document.getElementById('ingr_sum')
+		let porties = 2
+
+		let eggs = document.getElementById('eggs')
+		let sugar = document.getElementById('sugar')
+		let salt = document.getElementById('salt')
+		let water = document.getElementById('water')
+		let milk = document.getElementById('milk')
+		let razryh = document.getElementById('razryh')
+		let floor = document.getElementById('floor')
+		let oil = document.getElementById('oil')
+
+		let eggsCount = 2
+		let sugarCount = 3
+		let saltCount = 1
+		let waterCount = 200
+		let milkCount = 200
+		let razryhCount = 1
+		let floorCount = 250
+		let oilCount = 3
+
+		function ingrPlus() {
+			if (porties < 10) {
+				++porties
+				ingr_sum.textContent = porties
+
+				eggsCount = eggsCount + 2 / 2
+				sugarCount = sugarCount + 3 / 2
+				saltCount = saltCount + 1 / 2
+				waterCount = waterCount + 200 / 2
+				milkCount = milkCount + 200 / 2
+				razryhCount = razryhCount + 1 / 2
+				floorCount = floorCount + 250 / 2
+				oilCount = oilCount + 3 / 2
+
+				eggs.textContent = `${eggsCount} шт`
+				sugar.textContent = `${sugarCount} ст.л.`
+				salt.textContent = `${saltCount} щеп`
+				razryh.textContent = `${razryhCount} ч.л.`
+				oil.textContent = `${oilCount} ст.л.`
+
+				if (waterCount >= 1000) {
+					water.textContent = `${waterCount / 1000} л`
+				}
+				else {
+					water.textContent = `${waterCount} мл`
+				}
+
+				if (milkCount >= 1000) {
+					milk.textContent = `${milkCount / 1000} л`
+				}
+				else {
+					milk.textContent = `${milkCount} мл`
+				}
+
+				if (floorCount >= 1000) {
+					floor.textContent = `${floorCount / 1000} кг`
+				}
+				else {
+					floor.textContent = `${floorCount} г`
+				}
+			}
+		}
+
+		function ingrMinus() {
+			if (porties > 1) {
+				--porties
+				ingr_sum.textContent = porties
+
+				eggsCount = eggsCount - 2 / 2
+				sugarCount = sugarCount - 3 / 2
+				saltCount = saltCount - 1 / 2
+				waterCount = waterCount - 200 / 2
+				milkCount = milkCount - 200 / 2
+				razryhCount = razryhCount - 1 / 2
+				floorCount = floorCount - 250 / 2
+				oilCount = oilCount - 3 / 2
+
+				eggs.textContent = `${eggsCount} шт`
+				sugar.textContent = `${sugarCount} ст.л.`
+				salt.textContent = `${saltCount} щеп`
+				razryh.textContent = `${razryhCount} ч.л.`
+				oil.textContent = `${oilCount} ст.л.`
+
+				if (waterCount >= 1000) {
+					water.textContent = `${waterCount / 1000} л`
+				}
+				else {
+					water.textContent = `${waterCount} мл`
+				}
+
+				if (milkCount >= 1000) {
+					milk.textContent = `${milkCount / 1000} л`
+				}
+				else {
+					milk.textContent = `${milkCount} мл`
+				}
+
+				if (floorCount >= 1000) {
+					floor.textContent = `${floorCount / 1000} кг`
+				}
+				else {
+					floor.textContent = `${floorCount} г`
+				}
+			}
+		}
+
+		
+	</script>
 </body>
 </html>

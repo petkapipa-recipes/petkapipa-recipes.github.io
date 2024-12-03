@@ -32,3 +32,90 @@ h1 {
 	font-size: 2em;
 	margin-top: 0.5em;
 }
+
+.content {
+	margin: 1em;
+}
+
+.ingridients {
+	font-weight: 600;
+	font-size: 1.2em;
+}
+
+#calc-ingr-box {
+	display: flex;
+	width: 100%;
+	justify-content: start;
+	align-items: center;	
+	margin: 0;
+}
+
+#ingr_plus {
+	height: 1.2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	aspect-ratio: 1 / 1;
+	background: #ffffff91;
+	font-size: 1.2em;
+	padding: 0;
+	margin: 0 1em;
+	border: solid 0.1em #000;
+	border-radius: 0.3em;
+}
+#ingr_minus {
+	height: 1.2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	aspect-ratio: 1 / 1;
+	background: #ffffff91;
+	font-size: 1.2em;
+	padding: 0;
+	margin: 0 1em;
+	border: solid 0.1em #000;
+	border-radius: 0.3em;
+}
+#ingr_minus:active, #ingr_plus:active {
+	-webkit-box-shadow: 4px 4px 9px 2px rgba(34, 60, 80, 0.2);
+	-moz-box-shadow: 4px 4px 9px 2px rgba(34, 60, 80, 0.2);
+	box-shadow: 4px 4px 9px 2px rgba(34, 60, 80, 0.2);
+
+}
+
+#ingr_sum {
+	font-size: 1.2em;
+	width: 1em;
+	text-align: center;
+	color: #0c4907;
+}
+
+#ingr_calc_title {
+	font-size: 1.2em;
+}
+
+.sum_of_item {
+	color: #490707;
+}
+
+
+.step {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.step div {
+	border: solid 0.1em #000;
+	height: 0;
+	width: 30%;
+}
+
+.step-cont {
+	width: 100%;
+	font-weight: 600;
+	font-size: 1.1em;
+}
+
+.step-cont li {
+	margin: 0.5em 0;
+}
