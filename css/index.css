@@ -1,0 +1,64 @@
+* {
+	font-family: 'font1';
+	box-sizing: border-box;
+	user-select: none;
+}
+
+@font-face {
+	font-family: 'font1';
+	src: url('fonts/ShantellSans-Regular.ttf');
+}
+
+body {
+	background: #ecd196;
+
+}
+
+h1 {
+	text-align: center;
+	font-size: 2em;
+}
+
+.recipe-box {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	margin: 2em 0;
+}
+
+.recipe {
+	background: #ffffff38;
+	border: solid 0.2em #000;
+	width: 90%;
+	margin: 0 5%;
+	display: flex;
+	border-radius: 0.5em;
+}
+
+.recipe-content {
+	display: flex;
+	flex-direction: column;
+	width: 70%;
+}
+
+.recipe-title {
+	font-size: 1.2em;
+	text-align: center;
+	padding: 0;
+	margin: 0.1em 0;
+}
+
+.recipe-description {
+	font-size: 1em;
+	text-align: center;
+	padding: 0;
+	margin: 0.1em 0;
+}
+
+.recipe-image {
+	border-right: solid 0.2em #000;
+	aspect-ratio: 1 / 1;
+	width: 30%;
+	border-radius: 0.25em 0 0 0.25em;
+}
