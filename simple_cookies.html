@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="images/simple-cookies-icon.png">
+	<link rel="stylesheet" href="css/state.css">
+	<title>Рецепт печенья</title>
+</head>
+<body>
+	<div class="back-link-box"><a draggable="false" href="index.html" class="back-link">НА ГЛАВНУЮ</a></div>
+	<h1>РЕЦЕПТ ПЕЧЕНЬЯ</h1>
+	<div class="content">
+		<div id="calc-ingr-box">
+			<h2 id="ingr_calc_title">Количество порций:</h2>
+			<button id="ingr_minus" onclick="ingrMinus()">-</button>
+			<h2 id="ingr_sum">1</h2>
+			<button id="ingr_plus" onclick="ingrPlus()">+</button>
+		</div>
+		<h2>Ингридиенты:</h2>
+		<ul class="ingridients">
+			<li class="ing__item">Яйца: <span id="eggs" class="sum_of_item">1 шт</span></li>
+			<li class="ing__item">Сахарная пудра: <span id="sugar_pudra" class="sum_of_item">100 г</span></li>
+			<li class="ing__item">Растительное масло: <span id="oil" class="sum_of_item">100 мл</span></li>
+			<li class="ing__item">Мука: <span id="floor" class="sum_of_item">250 г</span></li>
+			<li class="ing__item">Соль: <span id="salt" class="sum_of_item">1 щеп</span></li>
+			<li class="ing__item">Разрыхлитель: <span id="razryh" class="sum_of_item">1 ч.л.</span></li>
+			<li class="ing__item">Ванилин: <span class="sum_of_item">по желанию</span></li>
+			<li class="ing__item">Кокос: <span class="sum_of_item">по желанию</span></li>
+		</ul>
+
+		<div class="step">
+			<div></div>
+			<h2>ШАГ 1</h2>
+			<div></div>
+		</div>
+
+		<ul class="step-cont">
+			<li>Вбить яйца в миску</li>
+			<li>Добавить соль и сахарную пудру</li>
+			<li>Кокос / Ванилин по желанию</li>
+			<li>Добавить разрыхлитель</li>
+			<li>Добавить растительное масло</li>
+			<li>Перемешать</li>
+		</ul>
+
+		<div class="step">
+			<div></div>
+			<h2>ШАГ 2</h2>
+			<div></div>
+		</div>
+
+		<ul class="step-cont">
+			<li>Порциями добавить просеянную муку</li>
+			<li>Замешать тесто до состояния, когда оно не будет липнуть к рукам</li>
+		</ul>
+		
+		<div class="step">
+			<div></div>
+			<h2>ШАГ 3</h2>
+			<div></div>
+		</div>
+
+		<ul class="step-cont">
+			<li>Противень смазать маслом или проложить пергаментом</li>
+			<li>Сформировать придавленные шарики из теста и выложить на противень</li>
+		</ul>
+
+		<div class="step">
+			<div></div>
+			<h2>ФИНАЛ</h2>
+			<div></div>
+		</div>
+
+		<ul class="step-cont">
+			<li>Разогреть духовку до 180°</li>
+			<li>Выпекать 10 ~ 15 минут</li>
+			<li>В конце лучше дать им немного остыть, так вкуснее :)</li>
+		</ul>
+
+		<div class="step">
+			<div></div>
+			<h2>ГОТОВО!</h2>
+			<div></div>
+		</div>
+		
+	</div>
+
+	<script>
+		document.addEventListener('contextmenu', (e) => {
+			e.preventDefault()
+		})
+		let ingr_sum = document.getElementById('ingr_sum')
+		let porties = 1
+
+		let eggs = document.getElementById('eggs')
+		let sugar_pudra = document.getElementById('sugar_pudra')
+		let salt = document.getElementById('salt')
+		let razryh = document.getElementById('razryh')
+		let floor = document.getElementById('floor')
+		let oil = document.getElementById('oil')
+
+		let eggsCount = 1
+		let sugar_pudraCount = 100
+		let saltCount = 1
+		let razryhCount = 2
+		let floorCount = 250
+		let oilCount = 100
+
+		function ingrPlus() {
+			if (porties < 10) {
+				++porties
+				ingr_sum.textContent = porties
+
+				eggsCount = eggsCount + 1
+				sugar_pudraCount = sugar_pudraCount + 100
+				saltCount = saltCount + 1
+				razryhCount = razryhCount + 2
+				floorCount = floorCount + 250
+				oilCount = oilCount + 100
+
+				eggs.textContent = `${eggsCount} шт`
+				salt.textContent = `${saltCount} щеп`
+				razryh.textContent = `${razryhCount} ч.л.`
+
+				if (sugar_pudraCount >= 1000) {
+					sugar_pudra.textContent = `${sugar_pudraCount / 1000} кг`
+				}
+				else {
+					sugar_pudra.textContent = `${sugar_pudraCount} г`
+				}
+
+				if (oilCount >= 1000) {
+					oil.textContent = `${oilCount / 1000} л`
+				}
+				else {
+					oil.textContent = `${oilCount} мл`
+				}
+
+				if (floorCount >= 1000) {
+					floor.textContent = `${floorCount / 1000} кг`
+				}
+				else {
+					floor.textContent = `${floorCount} г`
+				}
+			}
+		}
+
+		function ingrMinus() {
+			if (porties > 1) {
+				--porties
+				ingr_sum.textContent = porties
+
+				eggsCount = eggsCount - 1
+				sugar_pudraCount = sugar_pudraCount - 100
+				saltCount = saltCount - 1
+				razryhCount = razryhCount - 2
+				floorCount = floorCount - 250
+				oilCount = oilCount - 100
+
+				eggs.textContent = `${eggsCount} шт`
+				salt.textContent = `${saltCount} щеп`
+				razryh.textContent = `${razryhCount} ч.л.`
+
+				if (sugar_pudraCount >= 1000) {
+					sugar_pudra.textContent = `${sugar_pudraCount / 1000} кг`
+				}
+				else {
+					sugar_pudra.textContent = `${sugar_pudraCount} г`
+				}
+
+				if (oilCount >= 1000) {
+					oil.textContent = `${oilCount / 1000} л`
+				}
+				else {
+					oil.textContent = `${oilCount} мл`
+				}
+
+				if (floorCount >= 1000) {
+					floor.textContent = `${floorCount / 1000} кг`
+				}
+				else {
+					floor.textContent = `${floorCount} г`
+				}
+			}
+		}
+
+		
+	</script>
+</body>
+</html>
